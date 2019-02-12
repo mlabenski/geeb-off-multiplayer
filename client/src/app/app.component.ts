@@ -9,24 +9,9 @@ import { ChatService } from '../chat.service';
 })
 export class AppComponent {
   title = 'geeb-off';
-  message : string;
-  messages: string[] = [];
 
-  constructor(private chatService: ChatService) {}
 
-  sendMessage() {
-    this.chatService.sendMessage(this.message);
-    this.message = '';
-    console.log("hello");
-  }
+  constructor() {}
 
   //subscribe to the getMessage observable 
-  ngOnInit() {
-    this.chatService
-    .getMessages()
-    .subscribe((message: string) => {
-      console.log("hello");
-      this.messages.push(message);
-    })
-  }
 }

@@ -1,0 +1,35 @@
+<div style="text-align:center">
+  <h1>
+    Geeb Off!
+  </h1>
+  <h3>Challenge someone to the fattest gravity bong rip!</h3>
+  <img width="300" alt="Geeb Off" src="../assets\geeb-off.jpg" routerLink="/game">
+  <h3>Click the geeb to join queue</h3>
+</div>
+<div style="text-align: center">
+
+<div>
+    <input type="text" name="name" id="nameNew" [(ngModel)]="name" placeholder="Enter your name" required>
+  <button id="new"(click)="joinRoom()">Create Lobby</button>
+</div>
+<div style="padding-bottom: 25px">
+  <input type="text" name="name" id="nameJoin" [(ngModel)]="name" placeholder="Enter your name" required>
+  <input type="text" name="room" id="room" [(ngModel)]="roomID" placeholder="Enter Game ID" required>
+  <button id="join" (click)="newRoom()">Join a Lobby</button>
+</div>
+
+
+
+
+<!-- new messages array to store msgs from server  -->
+<div *ngFor="let message of messages">
+  {{message}}
+</div>
+<!-- send msg  -->
+<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button (click)="sendMessage()">Send</button>
+<button type="button" class="btn btn-primary"
+        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Simple demo
+</button>
+
